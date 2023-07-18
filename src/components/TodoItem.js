@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/TodoList.module.css';
 
+// the props are going to come from todoList 
 const TodoItem = ({ todo, updateTodo, deleteTodo, toast }) => {
   const [editing, setEditing] = useState(false);
   const [updatedTitle, setUpdatedTitle] = useState(todo.title);
 
+  // handle checkbox change
   const handleCheckboxChange = (e) => {
     updateTodo(todo.id, { completed: e.target.checked });
   };
+  // handle delete button 
 
   const handleDelete = async () => {
     try {
@@ -19,7 +22,7 @@ const TodoItem = ({ todo, updateTodo, deleteTodo, toast }) => {
       toast.error('Failed to delete todo');
     }
   };
-
+  // handle update onKeydown function
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleUpdate();
@@ -54,6 +57,7 @@ const TodoItem = ({ todo, updateTodo, deleteTodo, toast }) => {
         
 
         {editing ? (
+           // Input field for editing todo title
           <input
             type="text"
             value={updatedTitle}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useTodoAPI = () => {
+  //useState hook fr storing todos 
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
   
@@ -8,7 +9,7 @@ const useTodoAPI = () => {
 
   useEffect(() => {
     fetchTodos();
-    
+
   }, []);
 
   const fetchTodos = async () => {
@@ -24,6 +25,7 @@ const useTodoAPI = () => {
 
   const addTodo = async (newTodo) => {
     try {
+       // Make a dummy POST request (not persisted to the server)
       const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
         method: 'POST',
         headers: {
@@ -44,6 +46,7 @@ const useTodoAPI = () => {
 
   const updateTodo = async (id, updatedTodo) => {
     try {
+      // Make a dummy PUT request (not persisted to the server)
       await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
         method: 'PUT',
         headers: {
@@ -60,6 +63,7 @@ const useTodoAPI = () => {
 
   const deleteTodo = async (id) => {
     try {
+       // Make a dummy DELETE request (not persisted to the server)
       await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
         method: 'DELETE'
       });
