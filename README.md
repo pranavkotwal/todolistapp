@@ -14,7 +14,7 @@ This is a simple Todo List application built with React. It allows you to manage
 1. Clone the repository:
 
 ```bash
-   git clone 
+git clone https://github.com/pranavkotwal/todolistapp
 ```
 
 2. Install the dependencies
@@ -27,7 +27,6 @@ npm install
 
 ```
 npm start
-
 ```
 
 
@@ -39,3 +38,25 @@ npm start
 ## API enpoint
 
 https://jsonplaceholder.typicode.com/todos
+
+## Folder Structure
+```
+react-todo-list/
+|── public/
+│ └── ...
+├── src/
+│ ├── components/
+│ │ ├── TodoItem.js
+│ │ ├── TodoList.js
+│ │ └── App.js
+│ ├── hooks/
+│ │ ├── index.js
+│ │ └── ...
+│ ├── styles/
+│ │ ├── TodoList.module.css
+│ │ └── ...
+│ ├── index.js
+│ 
+├── package.json
+├── README.md
+```
